@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Navbar, Nav, Container, Row, Col, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 
 export default function App() {
   return (
@@ -18,12 +19,14 @@ export default function App() {
         </Container>
       </Navbar>
       <div>
-        <Row>
+        {/* <Row>
 
-        </Row>
+        </Row> */}
         <Row>
-          <Col xs="7">This is something</Col>
-          <Col>
+          <Col xs="7" className="my-4"><Container>
+            <h2>Order Details:</h2>
+          </Container></Col>
+          <Col className="min-vh-100 rightBar">
             <Button>This is a button</Button>
           </Col>
         </Row>
@@ -37,12 +40,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     color: "dark"
-  },
-  innerMenu:{
-    color: "white"
-  },
-  rightBar:{
-    backgroundColor: "D9D9D9"
   }
 });
 
