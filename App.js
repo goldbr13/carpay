@@ -14,7 +14,7 @@ export default function App() {
       <Header></Header>
       <div>
         <Row>
-          <OrderBar></OrderBar>
+          <OrderBar items={items}></OrderBar>
           <PaymentBar></PaymentBar>
         </Row>
       </div>
