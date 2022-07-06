@@ -1,34 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { Navbar, Nav, Container, Row, Col, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, Row, Col, Button, Table } from 'react-bootstrap';
+import { Header } from './Header';
+import { PaymentBar } from './PaymentBar';
+import { OrderBar } from './OrderBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+
+const items = [[1, "Small Cheeseburger", 4], [1, "Large French Fries", 52], [4, "Medium Sodas", 34.02], [1, "2p Chicken Nugget", 10.01]]
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Navbar bg="dark" variant="dark">
-        
-        <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
-        </Nav>
-        </Container>
-      </Navbar>
+      <Header></Header>
       <div>
-        {/* <Row>
-
-        </Row> */}
         <Row>
-          <Col xs="7" className="my-4"><Container>
-            <h2>Order Details:</h2>
-          </Container></Col>
-          <Col className="min-vh-100 rightBar">
-            <Button>This is a button</Button>
-          </Col>
+          <OrderBar></OrderBar>
+          <PaymentBar></PaymentBar>
         </Row>
       </div>
     </View>
