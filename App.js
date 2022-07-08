@@ -30,7 +30,7 @@ export default function App() {
       
       <Header></Header>
       <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
-        Open Modal
+        Credit Card
       </button>
       {isOpen && <Modal setIsOpen={setIsOpen} />}
       <div>
