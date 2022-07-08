@@ -13,6 +13,10 @@ const items = [[1, "Small Cheeseburger", 4], [1, "Large French Fries", 52], [4, 
 
 export default function App() {
 
+
+
+  const [isOpen, setIsOpen] = useState(false);
+
   const [loaded] = useFonts({
     AleckSans: require('./assets/fonts/ATTAleckSans_W_Rg.ttf'),
   });
@@ -21,8 +25,6 @@ export default function App() {
     console.log("hi")
     return null;
   }
-
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <View style={styles.container}>
       
