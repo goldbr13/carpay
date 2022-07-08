@@ -6,6 +6,8 @@ import { OrderBar } from './OrderBar';
 import { useFonts } from 'expo-font';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+import Modal from "./Modal.js"
+import React, { useState } from "react";
 
 const items = [[1, "Small Cheeseburger", 4], [1, "Large French Fries", 52], [4, "Medium Sodas", 34.02], [1, "2p Chicken Nugget", 10.01], [1, "Small Cheeseburger", 4], [1, "Large French Fries", 52], [4, "Medium Sodas", 34.02], [1, "2p Chicken Nugget", 10.01], [1, "Small Cheeseburger", 4], [1, "Large French Fries", 52], [4, "Medium Sodas", 34.02], [1, "2p Chicken Nugget", 10.01]]
 
@@ -20,9 +22,15 @@ export default function App() {
     return null;
   }
 
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <View style={styles.container}>
+      
       <Header></Header>
+      <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
+        Open Modal
+      </button>
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
       <div>
         <Row>
           <OrderBar items={items}></OrderBar>

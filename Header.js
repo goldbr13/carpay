@@ -7,6 +7,7 @@ export function Header() {
         <Container>
         <Navbar.Brand href="#home">
             <img src={logo} width="80" height="60" alt="Flo Logo"></img>
+            
             Flo's V8 Cafe
         </Navbar.Brand>
         
