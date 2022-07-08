@@ -1,3 +1,26 @@
+:root{
+    --ATTBlue: #009FDB
+}
+
 .rightBar{
     background-color: gray;
+}
+
+.row{
+    --bs-gutter-x: 0;
+}
+
+.header{
+    background-color: var(--ATTBlue);
+    color:white;
+}
+
+table{
+    display: block;
+    height: 65vh;
+    overflow-y: scroll;
+}
+
+th{
+    width: 20vw
 }

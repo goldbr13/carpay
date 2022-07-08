@@ -3,7 +3,7 @@ import { Navbar, Nav, Container, Row, Col, Button, Table } from 'react-bootstrap
 import logo from './assets/flo_v8_logo.png';
 export function Header() {
     return(
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="black" variant="dark">
         <Container>
         <Navbar.Brand href="#home">
             <img src={logo} width="80" height="60" alt="Flo Logo"></img>

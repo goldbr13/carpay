@@ -2,8 +2,9 @@ import { Navbar, Nav, Container, Row, Col, Button, Table } from 'react-bootstrap
 
 export function OrderBar(props) {
     return(
-    <Col xs="7" className="my-4"><Container>
-        <h2>Order Details:</h2>
+    <Col xs="7" className="">
+        <div className="header px-4 py-3"><h4>Order Details</h4></div>
+        <Container className="px-4 py-3">
         <Table>
           <thead>
             <th>Quantity</th>
@@ -22,6 +23,11 @@ export function OrderBar(props) {
                 );
             })
             }
+            <tr>
+                <td><b>Total:</b></td>
+                <td></td>
+                <td>$123</td>
+            </tr>
           </tbody>
         </Table>
       </Container></Col>
