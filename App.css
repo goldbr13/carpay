@@ -1,9 +1,14 @@
 :root{
-    --ATTBlue: #009FDB
+    --ATTBlue: #009FDB;
+    position: fixed;
+}
+
+.root{
+    position: fixed;
 }
 
 .rightBar{
-    background-color: gray;
+    background-color: #003878;
 }
 
 .row{
