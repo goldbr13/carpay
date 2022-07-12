@@ -16,9 +16,7 @@ const items = [[1, "Small Cheeseburger", 4], [1, "Large French Fries", 52], [4, 
 
 function Logotitle() {
   return(
-    <>
     <img src={logo} width="80" height="60" alt="Flo Logo" style={{padding: '5px'}}></img>
-    </>
   );
 }
 

@@ -1,5 +1,7 @@
 import { Modal, ListGroup, Nav, Container, Row, Col, Button, Table } from 'react-bootstrap';
 import { useState } from 'react';
+import checkmark from './assets/checkmark.png'
+import crossmark from './assets/crossmark.png'
 import { PaymentModal } from './Modal';
 
 
@@ -11,14 +13,14 @@ export function PaymentBar() {
                 <PaymentModal></PaymentModal>
             </Row>
             <Row className="mx-4">
-                <ListGroup>
-                    <ListGroup.Item action>
+                <ListGroup bg-dark>
+                    <ListGroup.Item action className="tipsOptions">
                         15%
                     </ListGroup.Item>
-                    <ListGroup.Item action>
+                    <ListGroup.Item action className="tipsOptions">
                         20%
                     </ListGroup.Item>
-                    <ListGroup.Item action>
+                    <ListGroup.Item action className="tipsOptions">
                         Custom
                     </ListGroup.Item>
                 </ListGroup>
@@ -28,10 +30,10 @@ export function PaymentBar() {
             </Row>
             <Row>
                 <Col><Button className='confButton' style={{backgroundColor: "#E51C1C", borderColor: "#E51C1C"}}>
-                    X
+                    <img src={crossmark} width="60" height="50" alt="crossmark" style={{padding: '5px'}}></img>
                 </Button></Col>
                 <Col><Button className='confButton' style={{backgroundColor: "#29D06C", borderColor: "#29D06C"}}>
-                    O
+                    <img src={checkmark} width="60" height="50" alt="checkmark" style={{padding: '5px'}}></img>
                 </Button></Col>
             </Row>
         </div>

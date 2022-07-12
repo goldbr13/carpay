@@ -24,7 +24,7 @@ export function PaymentModal(){
 
   return (
     <>
-      <Button className="bg-dark" onClick={handleShow}>{
+      <Button variant="dark" className="bg-dark" onClick={handleShow}>{
         showSelected()
       }</Button>
       <Modal show={show} onHide={handleClose}>
