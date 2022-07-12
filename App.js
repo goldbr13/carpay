@@ -5,7 +5,6 @@ import { Home } from "./Home";
 import { Wallet } from './Wallet';
 import { useFonts } from 'expo-font';
 import logo from './assets/flo_v8_logo.png';
-import { Routes, Router, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 // import Modal from "./Modal.js"
@@ -17,7 +16,9 @@ const items = [[1, "Small Cheeseburger", 4], [1, "Large French Fries", 52], [4, 
 
 function Logotitle() {
   return(
-    <img src={logo} width="80" height="60" alt="Flo Logo"></img>
+    <>
+    <img src={logo} width="80" height="60" alt="Flo Logo" style={{padding: '5px'}}></img>
+    </>
   );
 }
 
@@ -40,6 +41,8 @@ export default function App() {
             headerStyle: {
               backgroundColor: "black",
             },
+            // headerTitleAlign: "center",
+            headerShadowVisible: false,
             headerTitle: () => (<Logotitle></Logotitle>),
             headerRight: () => (
               <Button onClick={() => navigation.navigate('Wallet')}>Wallet Button</Button>

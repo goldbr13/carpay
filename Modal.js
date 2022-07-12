@@ -11,15 +11,30 @@ export function PaymentModal(){
   const Selected = "";
   const CreditCards = ["VISA ****0334", "VISA ****0452"];
 
+  function showSelected(){
+    if(Selected){
+      return Selected;
+    }
+    else{
+      return "Add Card"
+    }
+  }
+
+  function select(item){
+    Selected = item
+  }
+
   return (
     <>
-      <Button className="bg-dark" onClick={handleShow}>Enter Credit Card</Button>
+      <Button className="bg-dark" onClick={handleShow}>{
+        showSelected()
+      }</Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
         <Modal.Title>Select Credit Card</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <ListGroup defaultActiveKey="#link1">
+            <ListGroup>
               {
               CreditCards.map(item => {
                   return (
