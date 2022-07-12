@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Navbar, Nav, Container, Row, Col, Button, Table } from 'react-bootstrap';
 import logo from './assets/flo_v8_logo.png';
-export function Header() {
+export function Header({navigation}) {
     return(
     <Navbar bg="black" variant="dark">
         <Container>

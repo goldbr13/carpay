@@ -8,21 +8,19 @@ export function PaymentModal(){
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const Selected = "";
+  const [selected, setSelected] = useState("");
   const CreditCards = ["VISA ****0334", "VISA ****0452"];
 
   function showSelected(){
-    if(Selected){
-      return Selected;
+    if(selected){
+      return selected;
     }
     else{
       return "Add Card"
     }
   }
 
-  function select(item){
-    Selected = item
-  }
+  const select = (item) => setSelected(item)
 
   return (
     <>
@@ -38,7 +36,7 @@ export function PaymentModal(){
               {
               CreditCards.map(item => {
                   return (
-                    <ListGroup.Item action>
+                    <ListGroup.Item action onClick={() => {select(item); handleClose();}}>
                       {item}
                     </ListGroup.Item>
                   );

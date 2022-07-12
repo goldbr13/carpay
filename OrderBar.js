@@ -2,7 +2,7 @@ import { Navbar, Nav, Container, Row, Col, Button, Table } from 'react-bootstrap
 
 export function OrderBar(props) {
     return(
-    <Col xs="7" className="">
+    <Col xs="8" className="">
         <div className="header px-4 py-3"><h4>Order Details</h4></div>
         <Container className="px-4 py-3">
         <Table>
@@ -26,7 +26,7 @@ export function OrderBar(props) {
             <tr>
                 <td><b>Total:</b></td>
                 <td></td>
-                <td>$123</td>
+                <td>{props.items.reduce((partialSum, a) => partialSum + a[2], 0)}</td>
             </tr>
           </tbody>
         </Table>
