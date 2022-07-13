@@ -3,6 +3,7 @@ import { useState } from 'react';
 import checkmark from './assets/checkmark.png'
 import crossmark from './assets/crossmark.png'
 import { PaymentModal } from './Modal';
+import { Securepay } from './Securepay';
 
 
 export function PaymentBar(props) {
@@ -38,9 +39,9 @@ export function PaymentBar(props) {
                 <Col><Button className='confButton' style={{backgroundColor: "#E51C1C", borderColor: "#E51C1C"}}>
                     <img src={crossmark} width="55" height="50" alt="crossmark" style={{padding: '5px'}}></img>
                 </Button></Col>
-                <Col><Button className='confButton' style={{backgroundColor: "#29D06C", borderColor: "#29D06C"}}>
-                    <img src={checkmark} width="55" height="50" alt="checkmark" style={{padding: '5px'}}></img>
-                </Button></Col>
+                <Col>
+                <Securepay> </Securepay>
+                </Col>
             </Row>
         </div>
     </Col>
