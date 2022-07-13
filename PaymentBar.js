@@ -5,35 +5,41 @@ import crossmark from './assets/crossmark.png'
 import { PaymentModal } from './Modal';
 
 
-export function PaymentBar() {
+export function PaymentBar(props) {
+    const lowtip = (props.sum*0.15).toFixed(2)
+    const hightip = (props.sum*0.2).toFixed(2)
+
+    const [total, setTotal] = useState(props.sum)
+
     return(
-    <Col className="min-vh-100 rightBar">
+    <Col className="min-vh-100 rightBar" style={{color: "white"}}>
         <div>
             <Row className="mx-4 my-4">
                 <PaymentModal></PaymentModal>
             </Row>
             <Row className="mx-4">
+                <h4>Tips:</h4>
                 <ListGroup bg-dark>
-                    <ListGroup.Item action className="tipsOptions">
-                        15%
+                    <ListGroup.Item action className="tipsOptions" onClick={() => setTotal((props.sum*1.15).toFixed(2))}>
+                        15% - ${lowtip}
                     </ListGroup.Item>
-                    <ListGroup.Item action className="tipsOptions">
-                        20%
+                    <ListGroup.Item action className="tipsOptions" onClick={() => setTotal((props.sum*1.2).toFixed(2))}>
+                        20% - ${hightip}
                     </ListGroup.Item>
-                    <ListGroup.Item action className="tipsOptions">
+                    <ListGroup.Item action className="tipsOptions" onClick={() => setTotal(props.sum)}>
                         Custom
                     </ListGroup.Item>
                 </ListGroup>
             </Row>
             <Row className="mt-4 py-1 bg-black totalSum">
-                <h3>$150.25</h3>
+                <h3>${total}</h3>
             </Row>
             <Row>
                 <Col><Button className='confButton' style={{backgroundColor: "#E51C1C", borderColor: "#E51C1C"}}>
-                    <img src={crossmark} width="60" height="50" alt="crossmark" style={{padding: '5px'}}></img>
+                    <img src={crossmark} width="55" height="50" alt="crossmark" style={{padding: '5px'}}></img>
                 </Button></Col>
                 <Col><Button className='confButton' style={{backgroundColor: "#29D06C", borderColor: "#29D06C"}}>
-                    <img src={checkmark} width="60" height="50" alt="checkmark" style={{padding: '5px'}}></img>
+                    <img src={checkmark} width="55" height="50" alt="checkmark" style={{padding: '5px'}}></img>
                 </Button></Col>
             </Row>
         </div>

@@ -48,9 +48,6 @@ export function PaymentModal(){
         <Button variant="primary" onClick={handleClose}>
             Add Card
         </Button>
-        <Button variant="primary" onClick={handleClose}>
-            Select
-        </Button>
         </Modal.Footer>
     </Modal>
     </>

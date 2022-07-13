@@ -26,7 +26,7 @@ export function OrderBar(props) {
             <tr>
                 <td><b>Total:</b></td>
                 <td></td>
-                <td>${props.items.reduce((partialSum, a) => partialSum + a[2], 0).toFixed(2)}</td>
+                <td>${props.sum}</td>
             </tr>
           </tbody>
         </Table>
