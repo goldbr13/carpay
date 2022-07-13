@@ -25,7 +25,7 @@ export function Securepay(){
         <Modal.Title>Enter your PIN</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <Textbox></Textbox>
+            <input type= "number"/>
        
         </Modal.Body>
         <Modal.Footer>

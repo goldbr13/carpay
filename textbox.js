@@ -12,7 +12,9 @@ const UselessTextInput = () => {
         value={number}
         placeholder="Enter your PIN"
         keyboardType="numeric"
+        type="numeric"
       />
+      <input type= "number" />
     </SafeAreaView>
   );
 };
