@@ -9,7 +9,7 @@ export function PaymentModal(){
   const handleShow = () => setShow(true);
 
   const [selected, setSelected] = useState("");
-  const CreditCards = ["VISA ****0334", "VISA ****0452"];
+  const CreditCards = ["Visa ****0334", "Visa ****0452"];
 
   function showSelected(){
     if(selected){
