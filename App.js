@@ -6,6 +6,11 @@ import { Wallet } from './Wallet';
 import { useFonts } from 'expo-font';
 import logo from './assets/flo_v8_logo.png';
 import car from "./assets/Car.png"
+import store from "./assets/Store.png"
+import transmit from "./assets/wireless.png"
+import card from "./assets/Payment.png"
+import hand from "./assets/hand.png"
+import food from "./assets/food.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 // import Modal from "./Modal.js"
@@ -36,20 +41,38 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Body>
-          <Carousel>
+      <Modal className="intro_modal" show={show} onHide={handleClose}>
+        <Modal.Body style={{"text-align": "center"}}>
+          <h3 className='my-2'>
+            It's easy as 1, 2, 3!
+          </h3>
+          <Carousel variant='dark'>
             <Carousel.Item>
-              <Container style={{display: "flex", "flex-shrink":"1" }}>
-                <img src={car}></img>
-                <img src={car}></img>
+              <Container style={{display: "flex", "flex-shrink":"1", alignContent: "center"}}>
+                <img src={car} width="30%" style={{display: "block", "margin-left": "auto"}}></img>
+                <img src={store} width="30%" style={{display: "block", "margin-right": "auto"}}></img>
               </Container>
+              <Carousel.Caption style={{color: "black"}}>
+                1. Pull up to the Drive Through
+              </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <Container style={{display: "flex"}}>
-                <img src={car}></img>
-                <img src={car}></img>
+              <Container style={{display: "flex", "flex-shrink":"1", alignContent: "center"}}>
+                <img src={transmit} width="30%" style={{display: "block", "margin-left": "auto"}}></img>
+                <img src={card} width="30%" style={{display: "block", "margin-right": "auto"}}></img>
               </Container>
+              <Carousel.Caption style={{color: "black"}}>
+                2. Pay with Your Car
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <Container style={{display: "flex", "flex-shrink":"1", alignContent: "center"}}>
+                <img src={hand} width="30%" style={{display: "block", "margin-left": "auto", padding: "12px"}}></img>
+                <img src={food} width="30%" style={{display: "block", "margin-right": "auto", padding: "12px"}}></img>
+              </Container>
+              <Carousel.Caption style={{color: "black"}}>
+                3. Grab Your Food
+              </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
         </Modal.Body>
@@ -77,14 +100,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    color: "dark",
-    fontFamily: "AleckSans"
-  }
-});
 
 
