@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal, ListGroup, Nav, Container, Row, Col, Button, Table } from 'react-bootstrap';
 import { useState } from 'react';
+import { TextInput } from "react-native-web";
 
 export function PaymentModal(){
   const [show, setShow] = useState(false);
@@ -45,6 +46,7 @@ export function PaymentModal(){
             </ListGroup>
         </Modal.Body>
         <Modal.Footer>
+        <input></input>
         <Button variant="primary" onClick={handleClose}>
             Add Card
         </Button>

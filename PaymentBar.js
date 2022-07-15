@@ -28,7 +28,7 @@ export function PaymentBar(props) {
                         20% - ${hightip}
                     </ListGroup.Item>
                     <ListGroup.Item action className="tipsOptions" onClick={() => setTotal(props.sum)}>
-                        Custom
+                        No Tip
                     </ListGroup.Item>
                 </ListGroup>
             </Row>

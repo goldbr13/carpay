@@ -3,7 +3,7 @@ import { Navbar, Nav, Container, Row, Col, Button, Table } from 'react-bootstrap
 export function OrderBar(props) {
     return(
     <Col xs="8" className="">
-        <div className="header px-4 py-3"><h4>Order Details</h4></div>
+        <div className="header px-4 py-2"><h3>Order Details</h3></div>
         <Container className="px-4 py-3">
         <Table>
           <thead>
