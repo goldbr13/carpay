@@ -6,7 +6,7 @@ import validator from 'validator'
 export function PaymentModal(){
   const [show, setShow] = useState(false);
 
-  const handleClose = () => {
+  const handleClose2 = () => {
     let len = cardValue.length
     if (typeValue == "Mastercard"){
       let newCard = "MC ****" + cardValue.slice(len-4,len)
@@ -30,7 +30,7 @@ export function PaymentModal(){
     setAdd(false)
   };
 
-  const handleClose2 = () => setShow(false);
+  const handleClose = () => setShow(false);
 
   const handleShow = () => setShow(true);
 
@@ -103,7 +103,7 @@ export function PaymentModal(){
               {
               creditCards.map(item => {
                   return (
-                    <ListGroup.Item action onClick={() => {select(item); handleClose2();}}>
+                    <ListGroup.Item action onClick={() => {select(item); handleClose();}}>
                       {item}
                     </ListGroup.Item>
                   );
@@ -137,7 +137,7 @@ export function PaymentModal(){
         
           <br></br>
 
-        <Button variant="primary" disabled={!(add && add2 && (monthValue))} onClick={handleClose}>
+        <Button variant="primary" disabled={!(add && add2 && (monthValue))} onClick={handleClose2}>
             Add Card
         </Button>
         </Modal.Footer>
