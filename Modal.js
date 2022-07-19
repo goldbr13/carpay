@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, ListGroup, Nav, Container, Row, Col, Button, Table } from 'react-bootstrap';
+import { Modal, ListGroup, Nav, Container, Row, Col, Button, Table, Form, FloatingLabel } from 'react-bootstrap';
 import { useState } from 'react';
 import validator from 'validator'
 
@@ -27,7 +27,7 @@ export function PaymentModal(){
     setCardValue('')
     setCvvValue('')
     setMonthValue('')
-    setAdd(false)
+    setCCValid(false)
   };
 
   const handleClose = () => setShow(false);
@@ -55,14 +55,14 @@ export function PaymentModal(){
   const validateCreditCard = (value) => {
     if (value == '') {
       setErrorMessage('')
-      setAdd(false)
+      setCCValid(false)
     }
     else if (validator.isCreditCard(value)) {
       setErrorMessage('')
-      setAdd(true)
+      setCCValid(true)
     } else {
       setErrorMessage('Your Credit Card Number is Invalid!')
-      setAdd(false)
+      setCCValid(false)
     }
     setCardValue(value)
   }
@@ -71,17 +71,17 @@ export function PaymentModal(){
 
   const validateCVV = (value) => {
     if (re.test(value)) {
-     setAdd2(true) 
+     setCVVValid(true) 
     }
     else {
-      setAdd2(false)
+      setCVVValid(false)
     }
     setCvvValue(value)
   }
 
 
-  const [add, setAdd] = useState(false)
-  const [add2, setAdd2] = useState(false)
+  const [CCValid, setCCValid] = useState(false)
+  const [CVVValid, setCVVValid] = useState(false)
 
   const [cardValue, setCardValue] = useState('')
   const [cvvValue, setCvvValue] = useState('')
@@ -112,7 +112,51 @@ export function PaymentModal(){
             </ListGroup>
         </Modal.Body>
         <Modal.Footer>
-          <form>
+          <Form style={{width: "100%"}}>
+            <h4>Add New Payment Method</h4>
+            <Row className="my-2">
+              <Form.Group>
+                <FloatingLabel label="Card Number">
+                  <Form.Control type="number" placeholder="0" value={cardValue} onChange={(e) => validateCreditCard(e.target.value)}/>
+                </FloatingLabel>
+                <span style={{
+                    fontWeight: 'bold',
+                    color: 'red',
+                }}>{errorMessage}</span> <br></br>
+              </Form.Group>
+            </Row>
+            <Row className="my-2">
+              <Form.Group>
+                <FloatingLabel label="CVV">
+                  <Form.Control type="number" placeholder="0" value={cvvValue} onChange={(e) => validateCVV(e.target.value)} id="cvv"/>
+                </FloatingLabel>
+              </Form.Group>
+            </Row>
+            <Row className="my-2">
+              <Col xs="5" className="me-auto">
+                <Form.Group>
+                  <Form.Label>
+                    Expiration Date:
+                  </Form.Label>
+                  <Form.Control type="month" id="date" min="2022-07" value={monthValue} onChange={(e) => setMonthValue(e.target.value)}/>
+                </Form.Group>
+              </Col>
+              <Col xs="5" className="ms-auto">
+                <Form.Group>
+                  <Form.Label>
+                    Type:
+                  </Form.Label>
+                  <Form.Select id="types" value={typeValue} onChange={(e) => setTypeValue(e.target.value)}>
+                    <option value="Mastercard"> Mastercard </option>
+                    <option value="Visa"> Visa </option>
+                    <option value="American Express"> American Express </option>
+                    <option value="Discover"> Discover </option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+            </Row>
+          </Form>
+          {/* <form>
             <br></br>
             <label for="card"> Enter card number: </label>
             <input type="number" value={cardValue} onChange={(e) => validateCreditCard(e.target.value)} id="card"></input><br></br>
@@ -126,7 +170,6 @@ export function PaymentModal(){
             <label for="date"> Expiration Date: </label>
             <input type="month" id="date" min="2022-07" value={monthValue} onChange={(e) => setMonthValue(e.target.value)}></input><br></br>
             <select id="types" value={typeValue} onChange={(e) => setTypeValue(e.target.value)}>
-              {/* <option disabled selected> Select Card Type </option> */}
               <option value="Mastercard"> Mastercard </option>
               <option value="Visa"> Visa </option>
               <option value="American Express"> American Express </option>
@@ -135,9 +178,9 @@ export function PaymentModal(){
             <br></br>
           </form>
         
-          <br></br>
+          <br></br> */}
 
-        <Button variant="primary" disabled={!(add && add2 && (monthValue))} onClick={handleClose2}>
+        <Button variant="primary" disabled={!(CCValid && CVVValid && (monthValue))} onClick={handleClose2}>
             Add Card
         </Button>
         </Modal.Footer>

@@ -49,7 +49,7 @@ export default function App() {
           <Carousel variant='dark'>
             <Carousel.Item>
               <Container style={{display: "flex", "flex-shrink":"1", alignContent: "center"}}>
-                <img src={car} width="30%" style={{display: "block", "margin-left": "auto"}}></img>
+                <img src={car} width="30%" style={{display: "block", "margin-left": "auto", padding: "4px"}}></img>
                 <img src={store} width="30%" style={{display: "block", "margin-right": "auto"}}></img>
               </Container>
               <Carousel.Caption style={{color: "black"}}>
@@ -58,7 +58,7 @@ export default function App() {
             </Carousel.Item>
             <Carousel.Item>
               <Container style={{display: "flex", "flex-shrink":"1", alignContent: "center"}}>
-                <img src={transmit} width="30%" style={{display: "block", "margin-left": "auto"}}></img>
+                <img src={transmit} width="30%" style={{display: "block", "margin-left": "auto", padding: "4px"}}></img>
                 <img src={card} width="30%" style={{display: "block", "margin-right": "auto"}}></img>
               </Container>
               <Carousel.Caption style={{color: "black"}}>
@@ -67,8 +67,8 @@ export default function App() {
             </Carousel.Item>
             <Carousel.Item>
               <Container style={{display: "flex", "flex-shrink":"1", alignContent: "center"}}>
-                <img src={hand} width="30%" style={{display: "block", "margin-left": "auto", padding: "12px"}}></img>
-                <img src={food} width="30%" style={{display: "block", "margin-right": "auto", padding: "12px"}}></img>
+                <img src={hand} width="30%" style={{display: "block", "margin-left": "auto", padding: "15px"}}></img>
+                <img src={food} width="30%" style={{display: "block", "margin-right": "auto", padding: "15px"}}></img>
               </Container>
               <Carousel.Caption style={{color: "black"}}>
                 3. Grab Your Food
@@ -87,9 +87,9 @@ export default function App() {
             // headerTitleAlign: "center",
             headerShadowVisible: false,
             headerTitle: () => (<Logotitle></Logotitle>),
-            headerRight: () => (
-              <Button onClick={() => navigation.navigate('Wallet')}>Wallet Button</Button>
-            ),
+            // headerRight: () => (
+            //   <Button onClick={() => navigation.navigate('Wallet')}>Wallet Button</Button>
+            // ),
         })}/>
         <Stack.Screen name="Wallet" component={Wallet} />
       </Stack.Navigator>
