@@ -9,12 +9,21 @@
 
 .rightBar{
     background-color: #33383e;
+    color: white;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 64px);
 }
 
 .confButton{
     width:100%;
     height: 10vh;
     border-radius: 0;
+}
+
+button{
+    height: 60px
 }
 
 .tipsOptions{

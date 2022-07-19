@@ -7,8 +7,8 @@ export function OrderBar(props) {
         <Container className="px-4 py-3">
         <Table>
           <thead>
-            <th>Quantity</th>
             <th>Item Name</th>
+            <th>Quantity</th>
             <th>Price</th>
           </thead>
           <tbody>
@@ -16,8 +16,8 @@ export function OrderBar(props) {
             props.items.map(item => {
                 return (
                     <tr>
-                        <td>{item[0]}</td>
                         <td>{item[1]}</td>
+                        <td>{item[0]}</td>
                         <td>${item[2].toFixed(2)}</td>
                     </tr>
                 );
