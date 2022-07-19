@@ -10,7 +10,7 @@ import './App.css'
 import React, { useState } from "react";
 
 export function Home(){
-    const items = [[1, "Small Cheeseburger", 4.59], [2, "Large French Fries", 7.98], [1, "Medium Soda", 1.99], [1, "4p Chicken Nugget", 3.99], [1, "Apple Pie", 2.99], [1, "V8 Special Motor Oil", 14.99]]
+    const items = [[1, "Small Cheeseburger", 4.59], [2, "Large French Fries", 7.98], [3, "Ketchup Packets", 0], [1, "Medium Soda", 1.99], [1, "4p Chicken Nugget", 3.99], [1, "Apple Pie", 2.99], [1, "V8 Special Motor Oil", 14.99]]
     const sum = items.reduce((partialSum, a) => partialSum + a[2], 0).toFixed(2)
     return (
         <Row>

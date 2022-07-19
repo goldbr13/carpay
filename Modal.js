@@ -61,7 +61,7 @@ export function PaymentModal(){
       setErrorMessage('')
       setCCValid(true)
     } else {
-      setErrorMessage('Your Credit Card Number is Invalid!')
+      setErrorMessage('has-error')
       setCCValid(false)
     }
     setCardValue(value)
@@ -117,12 +117,8 @@ export function PaymentModal(){
             <Row className="my-2">
               <Form.Group>
                 <FloatingLabel label="Card Number">
-                  <Form.Control type="number" placeholder="0" value={cardValue} onChange={(e) => validateCreditCard(e.target.value)}/>
+                  <Form.Control type="number" placeholder="0" className={errorMessage} value={cardValue} onChange={(e) => validateCreditCard(e.target.value)}/>
                 </FloatingLabel>
-                <span style={{
-                    fontWeight: 'bold',
-                    color: 'red',
-                }}>{errorMessage}</span> <br></br>
               </Form.Group>
             </Row>
             <Row className="my-2">
@@ -133,7 +129,7 @@ export function PaymentModal(){
               </Form.Group>
             </Row>
             <Row className="my-2">
-              <Col xs="5" className="me-auto">
+              <Col xs="6" className="me-auto">
                 <Form.Group>
                   <Form.Label>
                     Expiration Date:

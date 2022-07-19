@@ -7,8 +7,8 @@ import { Securepay } from './Securepay';
 
 
 export function PaymentBar(props) {
-    const lowtip = (props.sum*0.15).toFixed(2)
-    const hightip = (props.sum*0.2).toFixed(2)
+    const lowtip = (props.sum*0.05).toFixed(2)
+    const hightip = (props.sum*0.1).toFixed(2)
 
     const [total, setTotal] = useState(props.sum)
 
@@ -24,14 +24,14 @@ export function PaymentBar(props) {
                     <ListGroup.Item action className="tipsOptions" onClick={() => setTotal(props.sum)}>
                         No Tip
                     </ListGroup.Item>
-                    <ListGroup.Item action className="tipsOptions" onClick={() => setTotal((props.sum*1.15).toFixed(2))}>
-                        15% - ${lowtip}
+                    <ListGroup.Item action className="tipsOptions" onClick={() => setTotal((props.sum*1.05).toFixed(2))}>
+                        5% - ${lowtip}
                     </ListGroup.Item>
-                    <ListGroup.Item action className="tipsOptions" onClick={() => setTotal((props.sum*1.2).toFixed(2))}>
-                        20% - ${hightip}
+                    <ListGroup.Item action className="tipsOptions" onClick={() => setTotal((props.sum*1.1).toFixed(2))}>
+                        10% - ${hightip}
                     </ListGroup.Item>
-                    <ListGroup.Item action className="tipsOptions" onClick={() => setTotal(props.sum)}>
-                        No Tip
+                    <ListGroup.Item action className="tipsOptions">
+                        Custom - $<input id="tips" type= "number" min="0" onChange={(event) => parseFloat(event.target.value) ? setTotal((parseFloat(props.sum) + parseFloat(event.target.value)).toFixed(2)) : setTotal(props.sum)}/>
                     </ListGroup.Item>
                 </ListGroup>
             </Row>
