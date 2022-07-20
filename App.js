@@ -44,7 +44,7 @@ export default function App() {
       <Modal className="intro_modal" show={show} onHide={handleClose}>
         <Modal.Body style={{"text-align": "center"}}>
           <h3 className='my-2'>
-            It's easy as 1, 2, 3!
+            It's as easy as 1, 2, 3!
           </h3>
           <Carousel variant='dark'>
             <Carousel.Item>
@@ -53,7 +53,7 @@ export default function App() {
                 <img src={store} width="30%" style={{display: "block", "margin-right": "auto"}}></img>
               </Container>
               <Carousel.Caption style={{color: "black"}}>
-                1. Pull up to the Drive Through
+                1. Pull Up to the Drive-Thru
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -62,7 +62,7 @@ export default function App() {
                 <img src={card} width="30%" style={{display: "block", "margin-right": "auto"}}></img>
               </Container>
               <Carousel.Caption style={{color: "black"}}>
-                2. Pay with Your Car
+                2. Pay With Your Car
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
