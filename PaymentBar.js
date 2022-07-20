@@ -31,7 +31,7 @@ export function PaymentBar(props) {
                         10% - ${hightip}
                     </ListGroup.Item>
                     <ListGroup.Item action className="tipsOptions">
-                        Custom - $<input id="tips" type= "number" min="0" onChange={(event) => parseFloat(event.target.value) ? setTotal((parseFloat(props.sum) + parseFloat(event.target.value)).toFixed(2)) : setTotal(props.sum)}/>
+                        Custom - $<input class="tipsinput" id="tips" type= "number" min="0" onChange={(event) => parseFloat(event.target.value) ? setTotal((parseFloat(props.sum) + parseFloat(event.target.value)).toFixed(2)) : setTotal(props.sum)}/>
                     </ListGroup.Item>
                 </ListGroup>
             </Row>
